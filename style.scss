@@ -1,0 +1,21 @@
+@mixin flexBox($justify, $items, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+    flex-direction: $direction;
+    margin: 20px;
+}
+
+.container {
+    height: 600px;
+    @include flexBox(center, center, column);
+    .buttons {
+        @include flexBox(space-around, center, row);
+        input:nth-child(1) {
+            background-color: green;
+        }
+        input:nth-child(2) {
+            background-color: red;
+        }
+    }
+}
